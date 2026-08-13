@@ -1,0 +1,23 @@
+# Credentials
+kaggle.json
+
+# Virtual environment
+venv/
+
+# Data (large / re-downloadable — see download_script.py)
+data/raw/
+data/processed/
+
+# Python cruft
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# MLflow local tracking artifacts
+mlruns/
+
+# Editor/OS
+.DS_Store
+.vscode/
+.idea/
