@@ -1,8 +1,12 @@
+from pathlib import Path
 import pandas as pd
 
 EXPECTED_COLUMNS = ["Time"] + [f"V{i}" for i in range(1, 29)] + ["Amount", "Class"]
 
-def load_data(path: str = "data/raw/creditcard.csv") -> pd.DataFrame:
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_DATA_PATH = PROJECT_ROOT / "data" / "raw" / "creditcard.csv"
+
+def load_data(path: str | Path = DEFAULT_DATA_PATH) -> pd.DataFrame:
     df = pd.read_csv(path)
     
     if list(df.columns) != EXPECTED_COLUMNS:
